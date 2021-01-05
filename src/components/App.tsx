@@ -1,8 +1,12 @@
 import React from "react";
+import AppRouter from "components/Router";
 
 function App() {
-    console.log(process.env.REACT_APP_API_KEY);
-    return <div className="App"></div>;
+    return (
+        <>
+            <AppRouter />
+        </>
+    );
 }
 
 export default App;
