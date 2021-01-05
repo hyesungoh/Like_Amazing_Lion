@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { firebaseInstance, authService } from "components/firebaseConfig";
+import Button from "@material-ui/core/Button";
+import Input from "@material-ui/core/Input";
 
 const Auth = () => {
     const [email, setEmail] = useState<string>("");
@@ -39,14 +41,15 @@ const Auth = () => {
     const onClickSocial = async (
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
-        const { name } = event.target as HTMLButtonElement;
+        const { parentNode } = event.target as HTMLButtonElement;
+        const { id } = parentNode as HTMLButtonElement;
 
         let provider: any;
-        if (name === "google") {
+        if (id === "google") {
             provider = new firebaseInstance.auth.GoogleAuthProvider();
-        } else if (name === "facebook") {
+        } else if (id === "facebook") {
             provider = new firebaseInstance.auth.FacebookAuthProvider();
-        } else if (name === "github") {
+        } else if (id === "github") {
             provider = new firebaseInstance.auth.GithubAuthProvider();
         }
 
@@ -62,11 +65,12 @@ const Auth = () => {
             <div className="background"></div>
             <div className="form">
                 <form onSubmit={onSubmit}>
-                    <input
+                    <Input
+                        id="standard-basic"
                         type="email"
                         value={email}
                         onChange={onChange}
-                    ></input>
+                    ></Input>
                     <input
                         type="password"
                         value={password}
@@ -83,15 +87,15 @@ const Auth = () => {
                     {isSignUp ? "로그인 하기" : "회원가입 하기"}
                 </button>
 
-                <button onClick={onClickSocial} name="google">
+                <Button onClick={onClickSocial} id="google">
                     구글로 로그인 하기
-                </button>
-                <button onClick={onClickSocial} name="facebook">
+                </Button>
+                <Button onClick={onClickSocial} id="facebook">
                     페이스북으로 로그인 하기
-                </button>
-                <button onClick={onClickSocial} name="github">
+                </Button>
+                <Button onClick={onClickSocial} id="github" color="primary">
                     깃허브로 로그인 하기
-                </button>
+                </Button>
             </div>
         </>
     );

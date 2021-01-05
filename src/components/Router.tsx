@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
-import { authService } from "components/firebaseConfig";
 
 import Auth from "pages/Auth";
 import Quiz from "pages/Quiz";
+import About from "pages/About";
+import Nav from "components/Nav/Nav";
 import useAuth from "hooks/useAuth";
 
 const AppRouter = () => {
     const currentUser = useAuth();
-    
+
     return (
         <HashRouter>
+            <Nav user={currentUser} />
             <Switch>
                 {currentUser === null ? (
                     <Route exact path="/">
@@ -21,6 +23,9 @@ const AppRouter = () => {
                         <Quiz />
                     </Route>
                 )}
+                <Route>
+                    <About />
+                </Route>
             </Switch>
         </HashRouter>
     );
