@@ -4,8 +4,8 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Auth from "pages/Auth/Auth";
 import Quiz from "pages/Quiz";
-import About from "pages/About";
-import Nav from "components/Nav/Nav";
+import About from "pages/About/About";
+import Nav from "components/Nav";
 import useAuth from "hooks/useAuth";
 
 const AppRouter = () => {
@@ -16,7 +16,7 @@ const AppRouter = () => {
             <CSSTransition
                 key={location.pathname}
                 classNames="slide"
-                timeout={1200}
+                timeout={800}
             >
                 <Switch location={location}>
                     {currentUser === null ? (

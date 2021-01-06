@@ -1,0 +1,33 @@
+@import "index.scss";
+
+.about {
+    width: 500px;
+    height: 255px;
+    background-color: $white_color;
+    padding: 20px 26px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-size: 16px;
+
+    .about__info,
+    .about__contect {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about__info {
+        span {
+            &:nth-child(2) {
+                font-size: 14px;
+                color: $main_color;
+            }
+        }
+    }
+
+    .about__contect {
+        align-self: flex-end;
+    }
+}

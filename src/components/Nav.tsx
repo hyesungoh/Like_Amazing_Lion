@@ -1,9 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import { authService } from "components/firebaseConfig";
-
-import "components/Nav/Nav.scss";
 import { Link, useHistory } from "react-router-dom";
+import { authService } from "components/firebaseConfig";
 
 interface NavProps {
     user: firebase.default.User | null;

@@ -4,6 +4,7 @@
 /config
 .env
 /src/config.ts
+/scripts
 
 # dependencies
 /node_modules
