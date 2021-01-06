@@ -9,8 +9,6 @@ const useAuth = () => {
     useEffect(() => {
         authService.onAuthStateChanged((user) => {
             setCurrenUser(user);
-
-            console.log(user);
         });
     }, []);
 

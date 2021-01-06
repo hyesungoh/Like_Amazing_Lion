@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { firebaseInstance, authService } from "components/firebaseConfig";
+import { authService } from "components/firebaseConfig";
 import { Button, TextField } from "@material-ui/core";
 
 import "pages/Auth/Auth.scss";
 import bglogo from "images/bglogo.png";
 import CustomAlert from "components/CustomAlert";
+import SocialAuth from "components/SocialAuth";
 
 const Auth = () => {
     const [email, setEmail] = useState<string>("");
@@ -39,24 +40,6 @@ const Auth = () => {
             const { message } = error;
             setErrorMsg(message);
         }
-    };
-
-    const onClickSocial = async (
-        event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-    ) => {
-        const { parentNode } = event.target as HTMLButtonElement;
-        const { id } = parentNode as HTMLButtonElement;
-
-        let provider: any;
-        if (id === "google") {
-            provider = new firebaseInstance.auth.GoogleAuthProvider();
-        } else if (id === "facebook") {
-            provider = new firebaseInstance.auth.FacebookAuthProvider();
-        } else if (id === "github") {
-            provider = new firebaseInstance.auth.GithubAuthProvider();
-        }
-
-        await authService.signInWithPopup(provider);
     };
 
     const toggleIsSignUp = () => {
@@ -95,21 +78,16 @@ const Auth = () => {
                     <Button type="submit" className="form__submit">
                         {isSignUp ? "회원가입" : "로그인"}
                     </Button>
+
+                    <span className="form__span">
+                        이미 가입을 하셨나요?{" "}
+                        <span onClick={toggleIsSignUp}>
+                            {isSignUp ? "로그인 하기" : "회원가입 하기"}
+                        </span>
+                    </span>
                 </form>
 
-                <button onClick={toggleIsSignUp}>
-                    {isSignUp ? "로그인 하기" : "회원가입 하기"}
-                </button>
-
-                <Button onClick={onClickSocial} id="google">
-                    구글로 로그인 하기
-                </Button>
-                <Button onClick={onClickSocial} id="facebook">
-                    페이스북으로 로그인 하기
-                </Button>
-                <Button onClick={onClickSocial} id="github" color="primary">
-                    깃허브로 로그인 하기
-                </Button>
+                <SocialAuth />
 
                 <CustomAlert msg={errorMsg} setMsg={setErrorMsg}></CustomAlert>
             </div>
