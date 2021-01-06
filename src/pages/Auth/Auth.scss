@@ -1,21 +1,50 @@
 .background {
-    width: 50vw;
+    width: 55vw;
     height: 100vh;
-    background-color: #141310;
+    clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 0 50%, 0% 0%);
 
-    img {
+    background-size: cover;
+    background-image: url("https://likelion.net/assets/home/slide/02-background-be82ae1605d3b8d909373f516e7aa593da9ab78ded7efd9177f94977d916b1c6.png");
+    background-position-x: -10vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .background__logo {
+        position: relative;
+        width: 25vw;
+        height: 25vw;
+        filter: invert(100%);
+    }
+
+    .background__image {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-
-        opacity: 1;
     }
 }
 
 .form {
-    width: 50vw;
+    width: 45vw;
     height: 100vh;
-
     background-color: white;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__form {
+    position: relative;
+    width: 60%;
+    height: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .form__submit {
+        color: #f79e1c;
+    }
 }

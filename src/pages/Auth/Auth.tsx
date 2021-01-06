@@ -1,21 +1,10 @@
 import React, { useState } from "react";
 import { firebaseInstance, authService } from "components/firebaseConfig";
+import { Button, TextField } from "@material-ui/core";
 
-import { Button, TextField, createMuiTheme, ThemeProvider } from "@material-ui/core";
-
-import "images/"
 import "pages/Auth/Auth.scss";
-
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            light: "#c0392b",
-            main: "#F79E1C",
-            dark: "#141310",
-            contrastText: "#c0392b",
-        },
-    },
-});
+import bglogo from "images/bglogo.png";
+import CustomAlert from "components/CustomAlert";
 
 const Auth = () => {
     const [email, setEmail] = useState<string>("");
@@ -75,37 +64,39 @@ const Auth = () => {
     };
 
     return (
-        <ThemeProvider theme={theme}>
+        <>
             <div className="background">
-                <img className="background__logo" src="" alt="bg_logo"></img>
                 <img
-                    src="https://likelion.net/assets/home/slide/02-background-be82ae1605d3b8d909373f516e7aa593da9ab78ded7efd9177f94977d916b1c6.png"
-                    alt="bg"
-                />
+                    className="background__logo"
+                    src={bglogo}
+                    alt="bg_logo"
+                ></img>
             </div>
             <div className="form">
-                <form onSubmit={onSubmit}>
+                <form className="form__form" onSubmit={onSubmit}>
                     <TextField
                         id="standard-basic"
-                        label="Standard"
+                        label="E-mail"
                         type="email"
                         value={email}
                         onChange={onChange}
                         className="form__input"
                     ></TextField>
 
-                    <input
+                    <TextField
+                        id="standard-basic"
+                        label="Password"
                         type="password"
                         value={password}
                         onChange={onChange}
-                    ></input>
-                    <input
-                        type="submit"
-                        value={isSignUp ? "회원가입" : "로그인"}
-                    ></input>
+                        className="form__input"
+                    ></TextField>
+
+                    <Button type="submit" className="form__submit">
+                        {isSignUp ? "회원가입" : "로그인"}
+                    </Button>
                 </form>
 
-                <span>{errorMsg}</span>
                 <button onClick={toggleIsSignUp}>
                     {isSignUp ? "로그인 하기" : "회원가입 하기"}
                 </button>
@@ -119,8 +110,10 @@ const Auth = () => {
                 <Button onClick={onClickSocial} id="github" color="primary">
                     깃허브로 로그인 하기
                 </Button>
+
+                <CustomAlert msg={errorMsg} setMsg={setErrorMsg}></CustomAlert>
             </div>
-        </ThemeProvider>
+        </>
     );
 };
 

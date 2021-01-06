@@ -41,8 +41,60 @@ import Input from "@material-ui/core/Input";
 ```
 
 ```scss
-// custom 
+// custom
 .btn {
     color: #youwant;
+}
+```
+
+-   Create Theme
+
+```tsx
+import { createMuiTheme } from "@material-ui/core";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            light: "#c0392b",
+            main: "#F79E1C",
+            dark: "#141310",
+            contrastText: "#c0392b",
+        },
+    },
+});
+```
+
+-   Using Theme
+
+```tsx
+import { ThemeProvider } from "@material-ui/core";
+
+function App() {
+    return (
+        <ThemeProvider theme={theme}>
+            <div className="app">
+                <AppRouter />
+            </div>
+        </ThemeProvider>
+    );
+}
+```
+
+#### Using image in React TypeScript
+
+```ts
+// new file image.d.ts
+declare module "*.png";
+declare module "*.jpg";
+declare module "*.jpeg";
+```
+
+```json
+// add in tsconfig.json
+{
+    "compilerOptions": {
+        "typeRoots": ["node_modules/@types", "src/types"],
+        ...
+    }
 }
 ```
