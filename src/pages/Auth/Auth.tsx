@@ -1,7 +1,21 @@
 import React, { useState } from "react";
 import { firebaseInstance, authService } from "components/firebaseConfig";
-import Button from "@material-ui/core/Button";
-import Input from "@material-ui/core/Input";
+
+import { Button, TextField, createMuiTheme, ThemeProvider } from "@material-ui/core";
+
+import "images/"
+import "pages/Auth/Auth.scss";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            light: "#c0392b",
+            main: "#F79E1C",
+            dark: "#141310",
+            contrastText: "#c0392b",
+        },
+    },
+});
 
 const Auth = () => {
     const [email, setEmail] = useState<string>("");
@@ -61,16 +75,25 @@ const Auth = () => {
     };
 
     return (
-        <>
-            <div className="background"></div>
+        <ThemeProvider theme={theme}>
+            <div className="background">
+                <img className="background__logo" src="" alt="bg_logo"></img>
+                <img
+                    src="https://likelion.net/assets/home/slide/02-background-be82ae1605d3b8d909373f516e7aa593da9ab78ded7efd9177f94977d916b1c6.png"
+                    alt="bg"
+                />
+            </div>
             <div className="form">
                 <form onSubmit={onSubmit}>
-                    <Input
+                    <TextField
                         id="standard-basic"
+                        label="Standard"
                         type="email"
                         value={email}
                         onChange={onChange}
-                    ></Input>
+                        className="form__input"
+                    ></TextField>
+
                     <input
                         type="password"
                         value={password}
@@ -97,7 +120,7 @@ const Auth = () => {
                     깃허브로 로그인 하기
                 </Button>
             </div>
-        </>
+        </ThemeProvider>
     );
 };
 

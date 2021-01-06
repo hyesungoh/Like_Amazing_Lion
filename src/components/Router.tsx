@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
 
-import Auth from "pages/Auth";
+import Auth from "pages/Auth/Auth";
 import Quiz from "pages/Quiz";
 import About from "pages/About";
 import Nav from "components/Nav/Nav";

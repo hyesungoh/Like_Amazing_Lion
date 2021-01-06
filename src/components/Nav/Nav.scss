@@ -1,4 +1,7 @@
 .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 12vh;
     display: flex;
@@ -6,7 +9,7 @@
     align-items: center;
 
     padding: 20px 10%;
-
+    z-index: 10;
     .nav__logo {
         font-size: 21px;
         width: 180px;
@@ -15,14 +18,14 @@
         transition: color 300ms;
 
         &:hover {
-            color: #F79E1C;
+            color: #f79e1c;
         }
     }
 
     .nav__element {
         font-size: 16px;
         width: 180px;
-        color: #F79E1C;
+        color: #f79e1c;
     }
 
     a {
