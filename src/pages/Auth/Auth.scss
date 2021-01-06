@@ -1,11 +1,14 @@
-.background {
-    width: 55vw;
+.auth {
+    width: 100vw;
     height: 100vh;
-    clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 0 50%, 0% 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    background-size: cover;
-    background-image: url("https://likelion.net/assets/home/slide/02-background-be82ae1605d3b8d909373f516e7aa593da9ab78ded7efd9177f94977d916b1c6.png");
-    background-position-x: -10vw;
+.background {
+    width: 50vw;
+    height: 100vh;
 
     display: flex;
     justify-content: center;
@@ -17,16 +20,12 @@
         height: 25vw;
         filter: invert(100%);
     }
-
-    .background__image {
-        width: 100%;
-        height: 100%;
-    }
 }
 
 .form {
-    width: 45vw;
+    width: 50vw;
     height: 100vh;
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
     background-color: white;
 
     display: flex;

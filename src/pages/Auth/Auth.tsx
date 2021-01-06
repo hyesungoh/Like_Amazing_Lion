@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { authService } from "components/firebaseConfig";
 import { Button, TextField } from "@material-ui/core";
+import { CSSTransition } from "react-transition-group";
 
 import "pages/Auth/Auth.scss";
 import bglogo from "images/bglogo.png";
@@ -47,7 +48,7 @@ const Auth = () => {
     };
 
     return (
-        <>
+        <div className="auth">
             <div className="background">
                 <img
                     className="background__logo"
@@ -91,7 +92,7 @@ const Auth = () => {
 
                 <CustomAlert msg={errorMsg} setMsg={setErrorMsg}></CustomAlert>
             </div>
-        </>
+        </div>
     );
 };
 

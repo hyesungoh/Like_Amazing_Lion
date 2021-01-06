@@ -80,6 +80,28 @@ function App() {
 }
 ```
 
+#### FontAwesome Icon
+
+-   Install
+
+```terminal
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome
+
+// in my case
+npm install --save @fortawesome/free-brands-svg-icons
+```
+
+-   Usage
+
+```tsx
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+
+<FontAwesomeIcon icon={faGoogle} size="4x" className="social__icon" />;
+```
+
 #### Using image in React TypeScript
 
 ```ts
@@ -97,4 +119,28 @@ declare module "*.jpeg";
         ...
     }
 }
+```
+
+#### Transition group with Hashrouter
+
+-   Hashrouter는 location key 값이 없어 작동되지 않는 것이였음
+-   `location.pathname`을 key 값으로 사용 시 작동
+
+```tsx
+const TransitionRouter = withRouter(({ location }) => (
+    <TransitionGroup className="app">
+        <CSSTransition
+            key={location.pathname}
+            classNames="slide"
+            timeout={1200}
+        >
+            <Switch location={location}>
+                <Route exact path="/">
+                    <Quiz />
+                </Route>
+                ...
+            </Switch>
+        </CSSTransition>
+    </TransitionGroup>
+));
 ```
