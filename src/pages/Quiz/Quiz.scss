@@ -1,6 +1,41 @@
 .quiz {
-    width: 100px;
-    height: 100px;
+    width: 50vw;
+    height: 50vh;
 
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .MuiSvgIcon-root {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.quiz__no {
+    transform: translateX(40px);
+
+    &.MuiCheckbox-colorSecondary.Mui-checked {
+        color: red;
+    }
+
+    &.Mui-checked {
+        .MuiSvgIcon-root {
+            color: red;
+        }
+    }
+}
+
+.quiz__yes {
+    transform: translateX(-40px);
+
+    &.MuiCheckbox-colorSecondary.Mui-checked {
+        color: green;
+    }
+
+    &.Mui-checked {
+        .MuiSvgIcon-root {
+            color: green;
+        }
+    }
 }

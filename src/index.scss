@@ -37,10 +37,10 @@ $white_color: white;
     transition: opacity 800ms;
 
     .loading__circle {
-        width: 300px;
-        height: 300px;
+        width: 303px;
+        height: 303px;
         border-radius: 50%;
-        border: 8px dashed $main_color;
+        border: 8px solid $main_color;
         animation: loading infinite 1500ms;
     }
 }
@@ -52,7 +52,7 @@ $white_color: white;
     }
     50% {
         transform: rotate(180deg);
-        border-radius: 40%
+        border-radius: 33%
     }
 
     100% {
