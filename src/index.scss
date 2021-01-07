@@ -22,6 +22,49 @@ $white_color: white;
     align-items: center;
 }
 
+.loading {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: $black_color;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 1;
+    transition: opacity 800ms;
+
+    .loading__circle {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 8px dashed $main_color;
+        animation: loading infinite 1500ms;
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+        border-radius: 50%;
+    }
+    50% {
+        transform: rotate(180deg);
+        border-radius: 40%
+    }
+
+    100% {
+        transform: rotate(360deg);
+        border-radius: 50%
+    }
+}
+
+.loading__end {
+    opacity: 0;
+}
+
 .nav {
     position: fixed;
     top: 0;

@@ -29,7 +29,7 @@ const SocialAuth = () => {
             }
 
             await authService.signInWithPopup(provider);
-        } catch ({message}) {
+        } catch ({ message }) {
             setErrorMsg(message);
         }
     };
@@ -37,10 +37,9 @@ const SocialAuth = () => {
     return (
         <div className="social">
             <Button
-                // onClick={onClickSocial}
+                onClick={onClickSocial}
                 id="google"
                 className="social__button"
-                color="secondary"
             >
                 <FontAwesomeIcon
                     icon={faGoogle}
