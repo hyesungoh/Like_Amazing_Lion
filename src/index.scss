@@ -59,6 +59,10 @@ $white_color: white;
 .slide-enter,
 .slide-exit {
     transition: all 800ms ease-in-out;
+
+    .background {
+        transition: transform 800ms ease-in-out 200ms;
+    }
 }
 
 .slide-enter {
@@ -80,4 +84,8 @@ $white_color: white;
 
 .slide-exit-active {
     transform: translateX(100vw);
+
+    .background {
+        transform: translateX(-200vw);
+    }
 }

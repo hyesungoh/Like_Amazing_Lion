@@ -121,10 +121,11 @@ declare module "*.jpeg";
 }
 ```
 
-#### Transition group with Hashrouter
+#### Transition group
 
--   Hashrouter는 location key 값이 없어 작동되지 않는 것이였음
--   `location.pathname`을 key 값으로 사용 시 작동
+-   with Hashrouter
+    -   Hashrouter는 location key 값이 없어 작동되지 않는 것이였음
+    -   `location.pathname`을 key 값으로 사용 시 작동
 
 ```tsx
 const TransitionRouter = withRouter(({ location }) => (
@@ -143,4 +144,27 @@ const TransitionRouter = withRouter(({ location }) => (
         </CSSTransition>
     </TransitionGroup>
 ));
+```
+
+-   different animation element in CSSTranstion
+
+    -   JSX, TSX상 추가적인 CSSTransition을 생성하는 것이 아닌 CSS, SCSS상 하드코딩으로 가능하단 것을 알게 됨
+
+```scss
+.slide-enter,
+.slide-exit {
+    transition: all 800ms ease-in-out;
+
+    .background {
+        transition: transform 800ms ease-in-out 200ms;
+    }
+}
+
+.slide-exit-active {
+    transform: translateX(100vw);
+
+    .background {
+        transform: translateX(-200vw);
+    }
+}
 ```
