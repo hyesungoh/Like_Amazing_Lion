@@ -1,11 +1,26 @@
+@import "index.scss";
+
 .quiz {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz__select {
     width: 50vw;
     height: 50vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
     .MuiSvgIcon-root {
         width: 300px;
         height: 300px;
@@ -37,5 +52,20 @@
         .MuiSvgIcon-root {
             color: green;
         }
+    }
+}
+
+.quiz__name {
+    width: 400px;
+    height: 100px;
+    background-color: $white_color;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    * {
+        font-size: 40px;
+        font-weight: 900;
     }
 }

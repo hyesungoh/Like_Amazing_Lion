@@ -1,12 +1,17 @@
-const quizs: object[] = [
-    { name: "정답은 X 입니다.0", anwser: "X" },
-    { name: "정답은 X 입니다.1", anwser: "X" },
-    { name: "정답은 X 입니다.2", anwser: "X" },
-    { name: "정답은 X 입니다.3", anwser: "X" },
-    { name: "정답은 X 입니다.4", anwser: "X" },
-    { name: "정답은 X 입니다.5", anwser: "X" },
-    { name: "정답은 X 입니다.6", anwser: "X" },
-    { name: "정답은 X 입니다.7", anwser: "X" },
+export interface QuizInterface {
+    name: string;
+    answer: boolean;
+}
+
+const quizs: QuizInterface[] = [
+    { name: "정답은 X 입니다.0", answer: false },
+    { name: "정답은 X 입니다.1", answer: false },
+    { name: "정답은 X 입니다.2", answer: false },
+    { name: "정답은 X 입니다.3", answer: false },
+    { name: "정답은 X 입니다.4", answer: false },
+    { name: "정답은 X 입니다.5", answer: false },
+    { name: "정답은 X 입니다.6", answer: false },
+    { name: "정답은 X 입니다.7", answer: false },
 ];
 
 const QUIZ_MAX: number = quizs.length;
