@@ -54,6 +54,7 @@ const Quiz = () => {
             <QuizProgress
                 maxQuizNum={GET_QUIZ_NUM}
                 currentQuizNum={currentQuiz}
+                setCurrentQuizNum={setCurrentQuiz}
             />
         </div>
     );
