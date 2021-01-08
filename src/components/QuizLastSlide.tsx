@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@material-ui/core";
 
 import QuizName from "components/QuizName";
 import { QuizSelectInterface } from "components/QuizSelect";
@@ -16,6 +17,11 @@ const QuizLastSlide = ({
     quizzes,
     setCurrentQuiz,
 }: QuizLastSlidePros) => {
+
+    const onSubmit = () => {
+        console.table(quizzes);
+        console.table(answer);
+    };
     return (
         <div className={`quiz__select ${isCurrent && "quiz__select__showing"}`}>
             {quizzes?.map((quiz, index) => (
@@ -28,6 +34,8 @@ const QuizLastSlide = ({
                     setCurrentQuiz={setCurrentQuiz}
                 />
             ))}
+
+            <Button onClick={onSubmit} className="select__submit" color="primary">결과 제출하기</Button>
         </div>
     );
 };

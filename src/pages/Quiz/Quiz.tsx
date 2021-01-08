@@ -5,6 +5,7 @@ import QuizSelect from "components/QuizSelect";
 import QuizSlider from "components/QuizSlider";
 import QuizLastSlide from "components/QuizLastSlide";
 import { getRandomQuiz, QuizInterface } from "components/Quizzes";
+import QuizProgress from "components/QuizProgress";
 
 const Quiz = () => {
     const GET_QUIZ_NUM: number = 3;
@@ -49,6 +50,11 @@ const Quiz = () => {
                     currentQuizNum={currentQuiz}
                 />
             </div>
+
+            <QuizProgress
+                maxQuizNum={GET_QUIZ_NUM}
+                currentQuizNum={currentQuiz}
+            />
         </div>
     );
 };
