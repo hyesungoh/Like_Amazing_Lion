@@ -28,7 +28,7 @@
 }
 
 .quiz__no {
-    transform: translateX(40px);
+    // transform: translateX(40px);
 
     &.MuiCheckbox-colorSecondary.Mui-checked {
         color: red;
@@ -42,7 +42,7 @@
 }
 
 .quiz__yes {
-    transform: translateX(-40px);
+    // transform: translateX(-40px);
 
     &.MuiCheckbox-colorSecondary.Mui-checked {
         color: green;

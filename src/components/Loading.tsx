@@ -11,7 +11,7 @@ const Loading = () => {
 
         setInterval(()=>{
             Loader.current.remove();
-        }, 2300)
+        }, 2350)
     }, []);
 
     return (
