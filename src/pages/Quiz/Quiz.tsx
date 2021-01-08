@@ -40,6 +40,7 @@ const Quiz = () => {
                     isCurrent={currentQuiz === GET_QUIZ_NUM}
                     answer={answers}
                     quizzes={quizzes}
+                    setCurrentQuiz={setCurrentQuiz}
                 />
 
                 <QuizSlider

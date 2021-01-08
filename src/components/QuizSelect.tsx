@@ -54,7 +54,7 @@ const QuizSelect = ({
                 />
             </div>
 
-            <QuizName name={quiz?.name} />
+            <QuizName name={quiz?.name as string} index={id}/>
         </div>
     );
 };

@@ -41,6 +41,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+
 }
 
 .quiz__select__showing {
@@ -86,7 +88,7 @@
 }
 
 .quiz__name {
-    width: 200px;
+    width: 60%;
     height: 80px;
     background-color: $white_color;
 
@@ -109,7 +111,21 @@
     justify-content: space-between;
     align-items: center;
 
-    button {
+    .slider__btn {
         z-index: 999;
+        width: 70px;
+        height: 70px;
+        transition: opacity 500ms;
+
+
+        .MuiSvgIcon-root {
+            width: 70px;
+            height: 70px;
+        }
     }
+
+    .slider__hide {
+        opacity: 0;
+    }
+
 }
