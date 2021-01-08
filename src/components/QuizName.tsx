@@ -11,7 +11,7 @@ const QuizName = ({ name }: QuizNameProps) => {
         <Button
             className="quiz__name"
             color="secondary"
-            endIcon={<Send fontSize="large" />}
+            // endIcon={<Send />}
         >
             <span>{name}</span>
         </Button>
