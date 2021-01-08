@@ -10,11 +10,21 @@ import {
 import QuizName from "components/QuizName";
 import { QuizInterface } from "components/Quizzes";
 
-const QuizSelect = ({ name, answer }: QuizInterface) => {
+interface QuizSelectInterface {
+    quiz: QuizInterface;
+    id: number;
+    answer: boolean[];
+    setAnswer: React.Dispatch<React.SetStateAction<boolean[]>>;
+}
+
+const QuizSelect = ({ id, quiz, answer, setAnswer }: QuizSelectInterface) => {
     const [myAnswer, setMyAnswer] = useState<boolean>(true);
 
     const onChange = () => {
-        setMyAnswer(!myAnswer);
+        answer[id] = !answer[id];
+        setAnswer(answer);
+
+        setMyAnswer(answer[id]);
     };
 
     return (
@@ -35,7 +45,7 @@ const QuizSelect = ({ name, answer }: QuizInterface) => {
                 checkedIcon={<PanoramaFishEye />}
             />
 
-            <QuizName name={name} />
+            {/* <QuizName name={name} /> */}
         </div>
     );
 };
