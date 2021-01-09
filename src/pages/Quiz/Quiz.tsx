@@ -6,12 +6,14 @@ import QuizSlider from "components/QuizSlider";
 import QuizLastSlide from "components/QuizLastSlide";
 import { getRandomQuiz, QuizInterface } from "components/Quizzes";
 import QuizProgress from "components/QuizProgress";
+import Result from "pages/Result/Result";
 
 const Quiz = () => {
     const GET_QUIZ_NUM: number = 3;
     const [quizzes, setQuizzes] = useState<QuizInterface[] | null>(null);
     const [answers, setAnswers] = useState([true, true, true]);
     const [currentQuiz, setCurrentQuiz] = useState<number>(0);
+    const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
     useEffect(() => {
         const tempQuizzes: QuizInterface[] = getRandomQuiz(
@@ -42,6 +44,7 @@ const Quiz = () => {
                     answer={answers}
                     quizzes={quizzes}
                     setCurrentQuiz={setCurrentQuiz}
+                    setIsSubmit={setIsSubmit}
                 />
 
                 <QuizSlider
@@ -56,6 +59,8 @@ const Quiz = () => {
                 currentQuizNum={currentQuiz}
                 setCurrentQuizNum={setCurrentQuiz}
             />
+
+            <Result quizzes={quizzes} answers={answers} isSubmit={isSubmit} />
         </div>
     );
 };

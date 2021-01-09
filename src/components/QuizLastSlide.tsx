@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 
 import QuizName from "components/QuizName";
 import { QuizSelectInterface } from "components/QuizSelect";
-import { QuizInterface } from "./Quizzes";
+import { QuizInterface } from "components/Quizzes";
 
 interface QuizLastSlidePros extends QuizSelectInterface {
     quizzes: QuizInterface[] | null;
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
+    setIsSubmit: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const QuizLastSlide = ({
@@ -16,12 +17,12 @@ const QuizLastSlide = ({
     answer,
     quizzes,
     setCurrentQuiz,
+    setIsSubmit,
 }: QuizLastSlidePros) => {
-
     const onSubmit = () => {
-        console.table(quizzes);
-        console.table(answer);
+        setIsSubmit(true);
     };
+
     return (
         <div className={`quiz__select ${isCurrent && "quiz__select__showing"}`}>
             {quizzes?.map((quiz, index) => (
@@ -35,7 +36,13 @@ const QuizLastSlide = ({
                 />
             ))}
 
-            <Button onClick={onSubmit} className="select__submit" color="primary">결과 제출하기</Button>
+            <Button
+                onClick={onSubmit}
+                className="select__submit"
+                color="primary"
+            >
+                결과 확인하기
+            </Button>
         </div>
     );
 };

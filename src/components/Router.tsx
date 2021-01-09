@@ -8,6 +8,7 @@ import Quiz from "pages/Quiz/Quiz";
 import About from "pages/About/About";
 import Nav from "components/Nav";
 import useAuth from "hooks/useAuth";
+import Result from "pages/Result/Result";
 
 const AppRouter = () => {
     const currentUser = useAuth();
@@ -29,7 +30,7 @@ const AppRouter = () => {
                             <Quiz />
                         </Route>
                     )}
-                    <Route>
+                    <Route path="/about">
                         <About />
                     </Route>
                 </Switch>

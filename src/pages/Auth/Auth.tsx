@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { authService } from "components/firebaseConfig";
 import { Button, TextField } from "@material-ui/core";
-import { CSSTransition } from "react-transition-group";
 
 import "pages/Auth/Auth.scss";
 import bglogo from "images/bglogo.png";
@@ -81,7 +80,7 @@ const Auth = () => {
                     </Button>
 
                     <span className="form__span">
-                        이미 가입을 하셨나요?{" "}
+                        {isSignUp? "이미 가입을 하셨나요?" : "이미 계정이 있으신가요?"}
                         <span onClick={toggleIsSignUp}>
                             {isSignUp ? "로그인 하기" : "회원가입 하기"}
                         </span>

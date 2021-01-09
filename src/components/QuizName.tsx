@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Checkbox } from "@material-ui/core";
 import {
-    Send,
     Clear,
     ClearOutlined,
     PanoramaFishEye,
@@ -51,7 +50,7 @@ const QuizName = ({
 
     return (
         <Button className="quiz__name" color="secondary" onClick={onClick}>
-            <span>
+            <span className={`name__span ${submitAnswer && "name__check" }`}>
                 {name}
                 {submitAnswer ? (submitValue ? trueIcon() : falseIcon()) : ""}
             </span>

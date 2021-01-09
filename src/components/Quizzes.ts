@@ -4,9 +4,9 @@ export interface QuizInterface {
 }
 
 const quizs: QuizInterface[] = [
-    { name: "정답은 X 입니다.0", answer: false },
-    { name: "정답은 X 입니다.1", answer: false },
-    { name: "정답은 X 입니다.2", answer: false },
+    { name: "멋쟁이 사자처럼 1기는 서울대학교에서만 진행했다 ?", answer: true },
+    { name: "자소설닷컴은 멋쟁이 사자처럼으로 시작했다 ?", answer: true },
+    { name: "멋쟁이 사자처럼은 IT 전공자만 신청 가능하다 ?", answer: false },
     { name: "정답은 X 입니다.3", answer: false },
     { name: "정답은 X 입니다.4", answer: false },
     { name: "정답은 X 입니다.5", answer: false },
