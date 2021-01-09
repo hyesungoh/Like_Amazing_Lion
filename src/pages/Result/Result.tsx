@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 
+import { ResultProps } from "components/ResultConfig";
+import { dbService } from "components/firebaseConfig";
+import ResultTitle from "components/ResultTitle";
+import ResultButton from "components/ResultButton";
 import "pages/Result/Result.scss";
-import { QuizInterface } from "components/Quizzes";
-
-interface ResultProps {
-    quizzes: QuizInterface[] | null;
-    answers: boolean[];
-    isSubmit?: boolean;
-}
 
 const grading = ({ quizzes, answers }: ResultProps) => {
     for (let i = 0; i < answers.length; i++) {
@@ -23,15 +20,17 @@ const Result = ({ quizzes, answers, isSubmit }: ResultProps) => {
 
     useEffect(() => {
         setIsCorrect(grading({ quizzes, answers }));
-
-        console.table(quizzes);
-        console.table(answers);
-        console.log(isSubmit);
     }, [isSubmit]);
 
     return (
         <div className={`result ${isSubmit ? "" : "result__hide"}`}>
             {isCorrect ? "맞음" : "틀림"}
+
+            <div className="result__overlay"></div>
+            <div className="result__box">
+                <ResultTitle isCorrect={isCorrect} />
+                <ResultButton isCorrect={isCorrect} />
+            </div>
         </div>
     );
 };
