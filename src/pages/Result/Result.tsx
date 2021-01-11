@@ -7,19 +7,12 @@ import ResultButton from "components/ResultButton";
 import "pages/Result/Result.scss";
 
 const grading = ({ quizzes, answers }: ResultProps) => {
-    let returnValue: boolean = false;
-
     for (let i = 0; i < answers.length; i++) {
         if (quizzes?.[i].answer !== answers[i]) {
-            returnValue = false;
+            return false;
         }
     }
-    returnValue = true;
-
-    // If true? save Firebase db to email
-
-
-    return returnValue
+    return true;
 };
 
 const Result = ({ quizzes, answers, isSubmit }: ResultProps) => {
