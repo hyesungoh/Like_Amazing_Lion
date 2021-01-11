@@ -33,8 +33,28 @@
 .result__box {
     opacity: 1;
 
-    width: 50vw;
+    width: 40vw;
     height: 70vh;
     z-index: 1002;
     background-color: $white_color;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+
+.result__title {
+    .title__header {
+        background-color: red;
+    }
+
+    .title__info {
+        background-color: blue;
+    }
+}
+
+.result__button {
+
+    align-self: flex-end;
 }

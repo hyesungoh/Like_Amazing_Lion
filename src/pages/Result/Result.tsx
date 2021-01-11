@@ -7,12 +7,19 @@ import ResultButton from "components/ResultButton";
 import "pages/Result/Result.scss";
 
 const grading = ({ quizzes, answers }: ResultProps) => {
+    let returnValue: boolean = false;
+
     for (let i = 0; i < answers.length; i++) {
         if (quizzes?.[i].answer !== answers[i]) {
-            return false;
+            returnValue = false;
         }
     }
-    return true;
+    returnValue = true;
+
+    // If true? save Firebase db to email
+
+
+    return returnValue
 };
 
 const Result = ({ quizzes, answers, isSubmit }: ResultProps) => {
@@ -24,8 +31,6 @@ const Result = ({ quizzes, answers, isSubmit }: ResultProps) => {
 
     return (
         <div className={`result ${isSubmit ? "" : "result__hide"}`}>
-            {isCorrect ? "맞음" : "틀림"}
-
             <div className="result__overlay"></div>
             <div className="result__box">
                 <ResultTitle isCorrect={isCorrect} />
