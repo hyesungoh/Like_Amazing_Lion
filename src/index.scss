@@ -3,6 +3,7 @@
 $main_color: #f79e1c;
 $black_color: #141310;
 $white_color: white;
+$transition_time: 1000ms;
 
 * {
     margin: 0;
@@ -101,16 +102,22 @@ $white_color: white;
 
 .slide-enter,
 .slide-exit {
-    transition: all 800ms ease-in-out;
+    transition: all $transition_time ease-in-out;
 
     .background {
-        transition: transform 800ms ease-in-out 200ms;
+        transition: transform $transition_time ease-in-out 200ms;
     }
+
     .quiz__progress {
-        transition: transform 800ms;
+        transition: transform $transition_time;
     }
+
+    .result {
+        transition: transform $transition_time;
+    }
+
     .result__overlay {
-        transition: opacity 800ms;
+        transition: opacity $transition_time;
     }
 }
 
@@ -143,11 +150,11 @@ $white_color: white;
     }
 
     .result {
-        // 오버레이가 트랜스폼되는 것이 상당히 거슬림 어떻게 할까 ?
-        transform: initial;
-        position: absolute;
-        top: 0;
-        left: 0;
+        transform: translateY(-100vh);
+    }
+
+    .result__overlay {
+        transform: translateX(-100vw);
         opacity: 0;
     }
 }

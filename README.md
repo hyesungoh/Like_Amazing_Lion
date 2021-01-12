@@ -14,6 +14,9 @@
 
 ![스크린샷 2021-01-06 오전 12 45 02](https://user-images.githubusercontent.com/26461307/103685150-1213a000-4fd0-11eb-86f0-9fdd06d08ace.png)
 
+- FirebaseError: Missing or insufficient permissions.
+    - Fibase Cloud Firestore 규칙 > allow read, write false to true
+
 #### Material UI
 
 -   Tsconfig.json setting

@@ -18,7 +18,7 @@ const AppRouter = () => {
             <CSSTransition
                 key={location.pathname}
                 classNames="slide"
-                timeout={800}
+                timeout={1500}
             >
                 <Switch location={location}>
                     {currentUser === null ? (
