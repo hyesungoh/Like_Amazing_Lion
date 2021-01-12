@@ -9,7 +9,7 @@ const ResultButton = ({ isCorrect }: ResultElementProps) => {
         <div className="result__button">
             {!isCorrect && (
                 <Button color="primary">
-                    <Link to="/">재도전</Link>
+                    <a href="/">재도전</a>
                 </Button>
             )}
             <Button color="primary">
