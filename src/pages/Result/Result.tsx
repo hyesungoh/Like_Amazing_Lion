@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { CheckCircleOutline, ErrorOutline } from "@material-ui/icons";
 
 import { ResultProps } from "components/ResultConfig";
 import { dbService } from "components/firebaseConfig";
@@ -26,6 +27,8 @@ const Result = ({ quizzes, answers, isSubmit }: ResultProps) => {
         <div className={`result ${isSubmit ? "" : "result__hide"}`}>
             <div className="result__overlay"></div>
             <div className="result__box">
+                {isCorrect ? <CheckCircleOutline /> : <ErrorOutline />}
+
                 <ResultTitle isCorrect={isCorrect} />
                 <ResultButton isCorrect={isCorrect} />
             </div>

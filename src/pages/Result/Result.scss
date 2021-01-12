@@ -34,13 +34,12 @@
     opacity: 0;
 }
 
-
 // Result box 디자인이 거슬림 어떻게 할까 ?
 .result__box {
     opacity: 1;
 
-    width: 30vw;
-    height: 50vh;
+    width: 32vw;
+    height: 52vh;
     z-index: 1002;
     padding: 20px 40px;
     background-color: rgba(255, 255, 255, 1);
@@ -51,42 +50,53 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .MuiSvgIcon-root {
+        width: 55px;
+        height: 55px;
+        // opacity: 0.4;
+        color: $main_color;
+    }
 }
 
 .result__title {
     width: 100%;
-    height: 60%;
+    height: 40%;
 
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 
     .title__header {
-        font-size: 30px;
-        color: $main_color;
+        font-size: 26px;
+        color: $black_color;
     }
 
     .title__info {
-        align-self: flex-end;
-        font-size: 16px;
-        color: #b3a48f;
+        font-size: 14px;
+        color: $black_color;
+        opacity: 0.4;
     }
 }
 
 .result__button {
     width: 100%;
-    height: 40%;
+    height: 60%;
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
-    button {
-        height: 60px;
-        
         a {
-            all: unset;
-            font-size: 22px;
-            color: $main_color;    
+        all: unset;
+        margin-top: 10px;
+
+        button {
+            width: 100%;
+            height: 45px;
+            font-size: 16px;
+            color: $white_color;
         }
     }
 }
