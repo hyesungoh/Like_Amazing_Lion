@@ -7,19 +7,19 @@ const ResultButton = ({ isCorrect }: ResultElementProps) => {
     useEffect(() => {}, []);
     return (
         <div className="result__button">
-            {!isCorrect && (
+            {isCorrect ? (
+                <a href="/">
+                    <Button variant="contained" color="primary">
+                        만든 사람 보기
+                    </Button>
+                </a>
+            ) : (
                 <a href="/">
                     <Button variant="contained" color="primary">
                         재도전
                     </Button>
                 </a>
             )}
-
-            <Link to="/about">
-                <Button variant="contained" color="primary">
-                    만든 사람 보기
-                </Button>
-            </Link>
 
             <a
                 href="https://github.com/hyesungoh/Like_Amazing_Lion"
