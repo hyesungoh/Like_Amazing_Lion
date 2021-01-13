@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HashRouter, Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+import useAuth from "hooks/useAuth";
+import useCheckCorrectedUser from "hooks/useCheckCorrectedUser";
 
 import Loading from "components/Loading";
 import Auth from "pages/Auth/Auth";
 import Quiz from "pages/Quiz/Quiz";
+import Waiting from "pages/Waiting/Waiting";
 import About from "pages/About/About";
 import Nav from "components/Nav";
-import useAuth from "hooks/useAuth";
-import Result from "pages/Result/Result";
 
 const AppRouter = () => {
     const currentUser = useAuth();
+    const isCorrectedUser = useCheckCorrectedUser(currentUser);
+
+    console.log(isCorrectedUser);
 
     const TransitionRouter = withRouter(({ location }) => (
         <TransitionGroup className="app">
@@ -24,6 +29,10 @@ const AppRouter = () => {
                     {currentUser === null ? (
                         <Route exact path="/">
                             <Auth />
+                        </Route>
+                    ) : isCorrectedUser ? (
+                        <Route exact path="/">
+                            <Waiting />
                         </Route>
                     ) : (
                         <Route exact path="/">

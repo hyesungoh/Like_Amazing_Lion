@@ -16,12 +16,12 @@ export const saveCorrectUserEmail = async (
     currentUser: firebase.default.User | null | undefined
 ) => {
     const { email, uid } = currentUser as firebase.default.User;
-    
+
     if (email !== null && email !== undefined) {
         const now = Date.now();
         const date = new Date(now);
 
-        await dbService.collection("correctedUserEmail").add({
+        await dbService.collection("correctedUser").add({
             correctedAt: date.toUTCString(),
             email,
             uid,
