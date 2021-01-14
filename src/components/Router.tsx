@@ -16,8 +16,6 @@ const AppRouter = () => {
     const currentUser = useAuth();
     const isCorrectedUser = useCheckCorrectedUser(currentUser);
 
-    console.log(isCorrectedUser);
-
     const TransitionRouter = withRouter(({ location }) => (
         <TransitionGroup className="app">
             <CSSTransition
