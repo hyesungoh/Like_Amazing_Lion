@@ -21,7 +21,7 @@ const Nav = ({ user }: NavProps) => {
                 <Button className="nav__logo">놀라운 사자처럼</Button>
             </Link>
 
-            <div>
+            <div className="nav__elements">
                 <Link to="/about">
                     <Button className="nav__element">만든 사람</Button>
                 </Link>
