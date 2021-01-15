@@ -5,7 +5,7 @@ import "pages/Waiting/Waiting.scss";
 const Waiting = () => {
     return (
         <div className="waiting">
-            <div className="background"></div>
+            <div className="background__waiting"></div>
             <div className="waiting__content">
                 <div className="content__title">
                     <h1>축하합니다 !</h1>

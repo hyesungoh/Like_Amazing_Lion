@@ -105,7 +105,7 @@ $transition_time: 1000ms;
     transition: all $transition_time ease-in-out;
 
     .background {
-        transition: transform $transition_time ease-in-out 200ms;
+        transition: transform $transition_time ease-in-out 100ms;
     }
 
     .quiz__progress {
@@ -156,5 +156,37 @@ $transition_time: 1000ms;
     .result__overlay {
         transform: translateX(-100vw);
         opacity: 0;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .app {
+        background-position: center;
+    }
+
+
+    .nav {
+        width: 100vw;
+        height: 12vh;
+        justify-content: space-around;
+        padding: 20px 1vw;
+
+        .nav__logo {
+            font-size: 18px;
+            width: 40vw;
+        }
+    
+        .nav__element {
+            font-size: 14px;
+            width: 30vw;
+        }
+    }
+
+    .loading {
+        .loading__circle {
+            width: 50vw;
+            height: 50vw;
+        }
     }
 }
