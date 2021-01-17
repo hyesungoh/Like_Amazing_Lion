@@ -6,6 +6,40 @@
 
 > <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/> <img src="https://img.shields.io/badge/MaterialUI-0081CB?style=flat-square&logo=Material-UI&logoColor=white"/>
 
+#### Result
+
+- Authenticate
+
+![auth](https://user-images.githubusercontent.com/26461307/104828851-db336900-58b0-11eb-803f-1753fd2b7edc.gif)
+
+- Auth to About
+
+![authToAbout](https://user-images.githubusercontent.com/26461307/104828853-de2e5980-58b0-11eb-811e-751c65604262.gif)
+
+- Social Login
+
+![socialLogin](https://user-images.githubusercontent.com/26461307/104828856-e090b380-58b0-11eb-8cfc-3dc7a8acc0f8.gif)
+
+- Quiz
+
+![quizSelectSlide](https://user-images.githubusercontent.com/26461307/104828859-e25a7700-58b0-11eb-8318-e46fc33357d9.gif)
+
+- Grading quiz - wrong
+
+![checkAnsWrong](https://user-images.githubusercontent.com/26461307/104828861-e5556780-58b0-11eb-8a59-76abfe803820.gif)
+
+- Quiz to About
+
+![quizToAbout](https://user-images.githubusercontent.com/26461307/104828862-e7b7c180-58b0-11eb-9e33-24c7799ed463.gif)
+
+- Grading quiz - correct
+
+![checkAnsCor](https://user-images.githubusercontent.com/26461307/104828864-ea1a1b80-58b0-11eb-8226-4720b948fad0.gif)
+
+- When Corrected user logged in
+
+![waiting](https://user-images.githubusercontent.com/26461307/104828865-ec7c7580-58b0-11eb-9ef0-ce79609dac4c.gif)
+
 #### Firebase
 
 -   Facebook social login

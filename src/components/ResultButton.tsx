@@ -8,13 +8,13 @@ const ResultButton = ({ isCorrect }: ResultElementProps) => {
     return (
         <div className="result__button">
             {isCorrect ? (
-                <a href="/">
+                <a href="">
                     <Button variant="contained" color="primary">
                         만든 사람 보기
                     </Button>
                 </a>
             ) : (
-                <a href="/">
+                <a href="">
                     <Button variant="contained" color="primary">
                         재도전
                     </Button>
