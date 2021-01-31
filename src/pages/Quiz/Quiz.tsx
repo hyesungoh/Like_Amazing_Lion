@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import "pages/Quiz/Quiz.scss";
-import QuizSelect from "components/QuizSelect";
-import QuizSlider from "components/QuizSlider";
-import QuizLastSlide from "components/QuizLastSlide";
-import { getRandomQuiz, QuizInterface } from "components/Quizzes";
-import QuizProgress from "components/QuizProgress";
+import QuizSelect from "components/Quiz/QuizSelect";
+import QuizSlider from "components/Quiz/QuizSlider";
+import QuizLastSlide from "components/Quiz/QuizLastSlide";
+import { getRandomQuiz, QuizInterface } from "components/Quiz/Quizzes";
+import QuizProgress from "components/Quiz/QuizProgress";
 import Result from "pages/Result/Result";
 
 const Quiz = () => {

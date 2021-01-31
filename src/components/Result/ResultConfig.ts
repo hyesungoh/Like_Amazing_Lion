@@ -1,4 +1,4 @@
-import { QuizInterface } from "components/Quizzes";
+import { QuizInterface } from "components/Quiz/Quizzes";
 import { dbService } from "components/firebaseConfig";
 
 export interface ResultProps {

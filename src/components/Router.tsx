@@ -5,12 +5,12 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import useAuth from "hooks/useAuth";
 import useCheckCorrectedUser from "hooks/useCheckCorrectedUser";
 
-import Loading from "components/Loading";
+import Loading from "components/Loading/Loading";
 import Auth from "pages/Auth/Auth";
 import Quiz from "pages/Quiz/Quiz";
 import Waiting from "pages/Waiting/Waiting";
 import About from "pages/About/About";
-import Nav from "components/Nav";
+import Nav from "components/Nav/Nav";
 
 const AppRouter = () => {
     const currentUser = useAuth();

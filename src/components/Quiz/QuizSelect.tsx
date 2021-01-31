@@ -7,8 +7,8 @@ import {
     PanoramaFishEyeOutlined,
 } from "@material-ui/icons";
 
-import QuizName from "components/QuizName";
-import { QuizInterface } from "components/Quizzes";
+import QuizName from "components/Quiz/QuizName";
+import { QuizInterface } from "components/Quiz/Quizzes";
 
 export interface QuizSelectInterface {
     id: number;

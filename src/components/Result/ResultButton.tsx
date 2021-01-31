@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import { Button } from "@material-ui/core";
-import { ResultElementProps } from "components/ResultConfig";
+import { ResultElementProps } from "components/Result/ResultConfig";
 
 const ResultButton = ({ isCorrect }: ResultElementProps) => {
     useEffect(() => {}, []);

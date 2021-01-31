@@ -7,7 +7,7 @@ import {
     faGoogle,
     faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-import CustomAlert from "components/CustomAlert";
+import CustomAlert from "components/Auth/CustomAlert";
 
 const SocialAuth = () => {
     const [errorMsg, setErrorMsg] = useState<string>("");

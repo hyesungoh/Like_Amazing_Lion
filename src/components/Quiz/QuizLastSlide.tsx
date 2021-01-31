@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 
-import QuizName from "components/QuizName";
-import { QuizSelectInterface } from "components/QuizSelect";
-import { QuizInterface } from "components/Quizzes";
+import QuizName from "components/Quiz/QuizName";
+import { QuizSelectInterface } from "components/Quiz/QuizSelect";
+import { QuizInterface } from "components/Quiz/Quizzes";
 
 interface QuizLastSlidePros extends QuizSelectInterface {
     quizzes: QuizInterface[] | null;

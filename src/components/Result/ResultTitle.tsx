@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { ResultElementProps } from "components/ResultConfig";
+import { ResultElementProps } from "components/Result/ResultConfig";
 
 const ResultTitle = ({ isCorrect }: ResultElementProps) => {
     const [header, setHeader] = useState<string>("");
