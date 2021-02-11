@@ -6,6 +6,8 @@
 
 > <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/> <img src="https://img.shields.io/badge/MaterialUI-0081CB?style=flat-square&logo=Material-UI&logoColor=white"/>
 
+[Develop Log](https://github.com/hyesungoh/Like_Amazing_Lion#firebase) / [Refactoring Log](https://github.com/hyesungoh/Like_Amazing_Lion#refactoring-log)
+
 #### Result
 
 -   Authenticate
@@ -276,4 +278,21 @@ const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         setErrorMsg(message);
     }
 };
+```
+
+-   가독성을 위해 Waiting component의 다른 서비스 url 주소를 변수로 빼둠
+-   target 속성과 rel 속성을 추가적으로 부여. target을 blank로 한 후 rel 속성을 noreferrer로 하지 않을 시 보안의 위협이 있다함
+
+```tsx
+// before
+<a href="someurl.com">
+    <Button color="primary">맛집 보기</Button>
+</a>;
+
+// after
+const LIKELION_FOOD_URL = "someurl.com";
+
+<a target="_blank" rel="noreferrer" href={LIKELION_FOOD_URL}>
+    <Button color="primary">맛집 보기</Button>
+</a>;
 ```
