@@ -1,7 +1,7 @@
 import React from "react";
 
 import "pages/Auth/Auth.scss";
-import bglogo from "images/bglogo.png";
+import bglogo from "assets/images/bglogo.png";
 
 import AuthForm from "components/Auth/AuthForm";
 import SocialAuth from "components/Auth/SocialAuth";
@@ -16,6 +16,7 @@ const Auth = () => {
                     alt="bg_logo"
                 ></img>
             </div>
+            
             <div className="form">
                 <AuthForm />
                 <SocialAuth />

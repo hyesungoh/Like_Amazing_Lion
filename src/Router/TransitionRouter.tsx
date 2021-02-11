@@ -23,14 +23,17 @@ const TransitionRouter = withRouter(({ location }) => {
             >
                 <Switch location={location}>
                     {currentUser === null ? (
+                        // 로그인 안했을 시
                         <Route exact path="/">
                             <Auth />
                         </Route>
                     ) : isCorrectedUser ? (
+                        // 정답을 맞춘 유저일 시
                         <Route exact path="/">
                             <Waiting />
                         </Route>
                     ) : (
+                        // 정답을 맞추기 전인 유저일 시
                         <Route exact path="/">
                             <Quiz />
                         </Route>

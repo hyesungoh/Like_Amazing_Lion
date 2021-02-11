@@ -218,7 +218,7 @@ const TransitionRouter = withRouter(({ location }) => (
 
 -   Loading component의 timeout 시간을 변수로 빼어 수정, 확장, 가독성 부분에서 유리하도록 수정
 
-```js
+```ts
 // before
 setTimeout(() => {
     setIsLoading(true);
@@ -231,3 +231,14 @@ setTimeout(() => {
 }, LOADING_TIME);
 ```
 
+-   assets Directory를 만들어 Theme.ts와 images 폴더를 위치
+
+-   Nav의 오른쪽 요소들을 NavElement component로 빼둠
+
+-   Types 폴더에 NavInterface를 위치
+
+```ts
+export interface NavInterface {
+    user: firebase.default.User | null;
+}
+```
