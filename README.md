@@ -8,35 +8,35 @@
 
 #### Result
 
-- Authenticate
+-   Authenticate
 
 ![auth](https://user-images.githubusercontent.com/26461307/104828851-db336900-58b0-11eb-803f-1753fd2b7edc.gif)
 
-- Auth to About
+-   Auth to About
 
 ![authToAbout](https://user-images.githubusercontent.com/26461307/104828853-de2e5980-58b0-11eb-811e-751c65604262.gif)
 
-- Social Login
+-   Social Login
 
 ![socialLogin](https://user-images.githubusercontent.com/26461307/104828856-e090b380-58b0-11eb-8cfc-3dc7a8acc0f8.gif)
 
-- Quiz
+-   Quiz
 
 ![quizSelectSlide](https://user-images.githubusercontent.com/26461307/104828859-e25a7700-58b0-11eb-8318-e46fc33357d9.gif)
 
-- Grading quiz - wrong
+-   Grading quiz - wrong
 
 ![checkAnsWrong](https://user-images.githubusercontent.com/26461307/104828861-e5556780-58b0-11eb-8a59-76abfe803820.gif)
 
-- Quiz to About
+-   Quiz to About
 
 ![quizToAbout](https://user-images.githubusercontent.com/26461307/104828862-e7b7c180-58b0-11eb-9e33-24c7799ed463.gif)
 
-- Grading quiz - correct
+-   Grading quiz - correct
 
 ![checkAnsCor](https://user-images.githubusercontent.com/26461307/104828864-ea1a1b80-58b0-11eb-8226-4720b948fad0.gif)
 
-- When Corrected user logged in
+-   When Corrected user logged in
 
 ![waiting](https://user-images.githubusercontent.com/26461307/104828865-ec7c7580-58b0-11eb-9ef0-ce79609dac4c.gif)
 
@@ -48,8 +48,8 @@
 
 ![스크린샷 2021-01-06 오전 12 45 02](https://user-images.githubusercontent.com/26461307/103685150-1213a000-4fd0-11eb-86f0-9fdd06d08ace.png)
 
-- FirebaseError: Missing or insufficient permissions.
-    - Fibase Cloud Firestore 규칙 > allow read, write false to true
+-   FirebaseError: Missing or insufficient permissions.
+    -   Fibase Cloud Firestore 규칙 > allow read, write false to true
 
 #### Material UI
 
@@ -205,3 +205,15 @@ const TransitionRouter = withRouter(({ location }) => (
     }
 }
 ```
+
+#### Refactoring Log
+
+-   Directory Structure
+
+    -   공식 문서를 참고하여 너무 오래 고민하지 않으며 기존 형태를 유지하면서 더욱 가독성이 보기 좋게 나누도록
+    -   Router Directory 생성
+    -   App.tsx src 폴더에 위치
+
+-   Router안의 Transition Group을 이용한 Transition Router 부분을 새로운 컴포넌트를 만들어 분리
+
+-

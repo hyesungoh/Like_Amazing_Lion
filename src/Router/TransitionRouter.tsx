@@ -1,22 +1,20 @@
 import React from "react";
-import { HashRouter, Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import useAuth from "hooks/useAuth";
-import useCheckCorrectedUser from "hooks/useCheckCorrectedUser";
-
-import Loading from "components/Loading/Loading";
 import Auth from "pages/Auth/Auth";
 import Quiz from "pages/Quiz/Quiz";
 import Waiting from "pages/Waiting/Waiting";
 import About from "pages/About/About";
-import Nav from "components/Nav/Nav";
 
-const AppRouter = () => {
+import useAuth from "hooks/useAuth";
+import useCheckCorrectedUser from "hooks/useCheckCorrectedUser";
+
+const TransitionRouter = withRouter(({ location }) => {
     const currentUser = useAuth();
     const isCorrectedUser = useCheckCorrectedUser(currentUser);
 
-    const TransitionRouter = withRouter(({ location }) => (
+    return (
         <TransitionGroup className="app">
             <CSSTransition
                 key={location.pathname}
@@ -43,15 +41,7 @@ const AppRouter = () => {
                 </Switch>
             </CSSTransition>
         </TransitionGroup>
-    ));
-
-    return (
-        <HashRouter>
-            <Loading />
-            <Nav user={currentUser} />
-            <TransitionRouter />
-        </HashRouter>
     );
-};
+});
 
-export default AppRouter;
+export default TransitionRouter;
