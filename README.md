@@ -216,4 +216,18 @@ const TransitionRouter = withRouter(({ location }) => (
 
 -   Router안의 Transition Group을 이용한 Transition Router 부분을 새로운 컴포넌트를 만들어 분리
 
--
+-   Loading component의 timeout 시간을 변수로 빼어 수정, 확장, 가독성 부분에서 유리하도록 수정
+
+```js
+// before
+setTimeout(() => {
+    setIsLoading(true);
+}, 1500);
+
+// after
+const LOADING_TIME: number = 1500;
+setTimeout(() => {
+    setIsLoading(true);
+}, LOADING_TIME);
+```
+
