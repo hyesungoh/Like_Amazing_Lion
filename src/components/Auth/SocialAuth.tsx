@@ -10,15 +10,19 @@ import {
 import CustomAlert from "components/Auth/CustomAlert";
 
 const SocialAuth = () => {
+    // error message state
     const [errorMsg, setErrorMsg] = useState<string>("");
 
+    // social sign in to decide there id
     const onClickSocial = async (
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
+        // clicked dom
         const { parentNode } = event.target as HTMLButtonElement;
+        // clicked dom's id
         const { id } = parentNode as HTMLButtonElement;
-        let provider: any;
 
+        let provider: any;
         try {
             if (id === "google") {
                 provider = new firebaseInstance.auth.GoogleAuthProvider();

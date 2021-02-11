@@ -16,7 +16,7 @@ const Auth = () => {
                     alt="bg_logo"
                 ></img>
             </div>
-            
+
             <div className="form">
                 <AuthForm />
                 <SocialAuth />

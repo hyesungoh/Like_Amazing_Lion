@@ -242,3 +242,38 @@ export interface NavInterface {
     user: firebase.default.User | null;
 }
 ```
+
+-   AuthForm component의 signUp, signIn을 함수로 빼어 더욱 간결하게 작성
+
+```ts
+// before
+const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+        if (isSignUp) {
+            await authService.createUserWithEmailAndPassword(email, password);
+        } else {
+            await authService.signInWithEmailAndPassword(email, password);
+        }
+    } catch (error) {
+        const { message } = error;
+        setErrorMsg(message);
+    }
+};
+
+// after
+const signUp = () =>
+    authService.createUserWithEmailAndPassword(email, password);
+
+const signIn = () => authService.signInWithEmailAndPassword(email, password);
+
+const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+        await (isSignUp ? signUp() : signIn());
+    } catch (error) {
+        const { message } = error;
+        setErrorMsg(message);
+    }
+};
+```

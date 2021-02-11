@@ -5,11 +5,16 @@ import { authService } from "components/firebaseConfig";
 import CustomAlert from "components/Auth/CustomAlert";
 
 const AuthForm = () => {
+    // Email Value
     const [email, setEmail] = useState<string>("");
+    // Password Value
     const [password, setPassword] = useState<string>("");
+    // SignUp or SignIn check state
     const [isSignUp, setIsSignUp] = useState<boolean>(true);
+    // Error Message state
     const [errorMsg, setErrorMsg] = useState<string>("");
 
+    // onChange to check there type
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {
             target: { type, value },
@@ -22,23 +27,24 @@ const AuthForm = () => {
         }
     };
 
+    const signUp = () =>
+        authService.createUserWithEmailAndPassword(email, password);
+
+    const signIn = () =>
+        authService.signInWithEmailAndPassword(email, password);
+
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            if (isSignUp) {
-                await authService.createUserWithEmailAndPassword(
-                    email,
-                    password
-                );
-            } else {
-                await authService.signInWithEmailAndPassword(email, password);
-            }
+            // check state to decide SiginUp or SignIn
+            await (isSignUp ? signUp() : signIn());
         } catch (error) {
             const { message } = error;
             setErrorMsg(message);
         }
     };
 
+    // toggle isSignUp value
     const toggleIsSignUp = () => {
         setIsSignUp((prev) => !prev);
     };
