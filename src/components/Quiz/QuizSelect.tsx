@@ -23,9 +23,11 @@ const QuizSelect = ({
     // 체크 박스를 클릭 시 현재 선택한 것과 반대의 정보를 해당 answer state의 setStating
     // myAnswer state는 현재 component의 값을 수정하기 위함
     const onChange = () => {
-        answer[id] = !answer[id];
-        setAnswer?.(answer);
-        setMyAnswer(answer[id]);
+        if (id) {
+            answer[id] = !answer[id];
+            setAnswer?.(answer);
+            setMyAnswer(answer[id]);
+        }
     };
 
     return (
@@ -48,7 +50,7 @@ const QuizSelect = ({
                 />
             </div>
 
-            <QuizName name={quiz?.name as string} index={id} />
+            <QuizName name={quiz?.name as string} index={id as number} />
         </div>
     );
 };

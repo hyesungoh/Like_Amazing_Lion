@@ -296,3 +296,23 @@ const LIKELION_FOOD_URL = "someurl.com";
     <Button color="primary">맛집 보기</Button>
 </a>;
 ```
+
+-   QuizSlider의 classList 추가 부분을 반복적으로 작성하는 부분이 적게 변환
+
+```tsx
+// before
+if (currentQuizNum === 0) {
+    leftButton.current.classList.add("slider__hide");
+} else if (currentQuizNum === maxQuizNum) {
+    rightButton.current.classList.add("slider__hide");
+}
+
+// after
+let modifingButton: React.MutableRefObject<any> | null = null;
+if (currentQuizNum === 0) {
+    modifingButton = leftButton;
+} else if (currentQuizNum === maxQuizNum) {
+    modifingButton = rightButton;
+}
+modifingButton?.current.classList.add("slider__hide");
+```

@@ -47,7 +47,6 @@ const Quiz = () => {
                 })}
 
                 <QuizLastSlide
-                    id={GET_QUIZ_NUM}
                     isCurrent={currentQuiz === GET_QUIZ_NUM}
                     answer={answers}
                     quizzes={quizzes}

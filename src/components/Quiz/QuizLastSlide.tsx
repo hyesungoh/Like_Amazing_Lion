@@ -1,24 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@material-ui/core";
 
 import QuizName from "components/Quiz/QuizName";
-import { QuizSelectInterface } from "components/Quiz/QuizSelect";
-import { QuizInterface } from "components/Quiz/Quizzes";
-
-interface QuizLastSlidePros extends QuizSelectInterface {
-    quizzes: QuizInterface[] | null;
-    setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
-    setIsSubmit: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { QuizLastSlidePros } from "types/Types";
 
 const QuizLastSlide = ({
-    id,
     isCurrent,
     answer,
     quizzes,
     setCurrentQuiz,
     setIsSubmit,
 }: QuizLastSlidePros) => {
+    // Quiz Component의 isSubmit state를 true로 하여 modal이 나오게
     const onSubmit = () => {
         setIsSubmit(true);
     };
@@ -26,6 +19,7 @@ const QuizLastSlide = ({
     return (
         <div className={`quiz__select ${isCurrent && "quiz__select__showing"}`}>
             {quizzes?.map((quiz, index) => (
+                // 모든 퀴즈들을 보여줌
                 <QuizName
                     key={index}
                     index={index}

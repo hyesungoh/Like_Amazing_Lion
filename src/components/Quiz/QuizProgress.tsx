@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-interface QuizProgressProps {
-    maxQuizNum: number;
-    currentQuizNum: number;
-    setCurrentQuizNum: React.Dispatch<React.SetStateAction<number>>;
-}
+import { QuizProgressProps } from "types/Types";
 
 const QuizProgress = ({
     maxQuizNum,
