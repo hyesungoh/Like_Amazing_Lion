@@ -316,3 +316,49 @@ if (currentQuizNum === 0) {
 }
 modifingButton?.current.classList.add("slider__hide");
 ```
+
+-   QuizProgress의 classList를 저장하는 배열을 기존 빈 배열을 선언 후 추가하는 방법에서 모두 들어가는 class명을 넣은 상태에서 조건에 따라 추가하는 방식으로 수정
+
+```tsx
+// before
+const tempProgress: string[] = [];
+for (let i = 0; i <= maxQuizNum; i++) {
+    const tempElement = `progress__element ${
+        i === currentQuizNum && "progress__selected"
+    }`;
+    tempProgress.push(tempElement);
+}
+
+// after
+const tempProgress: string[] = Array(maxQuizNum + 1).fill("progress__element");
+for (let i = 0; i <= maxQuizNum; i++) {
+    if (i === currentQuizNum) {
+        tempProgress[i] += " progress__selected";
+    }
+}
+```
+
+-   유지보수와 가독성을 위해 QuizProgress의 Class명을 변수로 선언
+
+```tsx
+// before
+const tempProgress: string[] = Array(maxQuizNum + 1).fill("progress__element");
+for (let i = 0; i <= maxQuizNum; i++) {
+    if (i === currentQuizNum) {
+        tempProgress[i] += " progress__selected";
+    }
+}
+
+// after
+const PROGRESS_CN: string = "progress__element";
+const SELECTED_PROGRESS_CN: string = " progress__selected";
+
+...
+const tempProgress: string[] = Array(maxQuizNum + 1).fill(PROGRESS_CN);
+
+for (let i = 0; i <= maxQuizNum; i++) {
+    if (i === currentQuizNum) {
+        tempProgress[i] += SELECTED_PROGRESS_CN;
+    }
+}
+```

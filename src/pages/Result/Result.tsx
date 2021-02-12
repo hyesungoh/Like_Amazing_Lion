@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { CheckCircleOutline, ErrorOutline } from "@material-ui/icons";
 
 import useAuth from "hooks/useAuth";
-import { ResultProps, saveCorrectUserEmail } from "components/Result/ResultConfig";
+import {
+    ResultProps,
+    saveCorrectUserEmail,
+} from "components/Result/ResultConfig";
 import ResultTitle from "components/Result/ResultTitle";
 import ResultButton from "components/Result/ResultButton";
 import "pages/Result/Result.scss";
