@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { firebaseInstance, authService } from "components/firebaseConfig";
+import { firebaseInstance, authService } from "configs/firebaseConfig";
 import { Button } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

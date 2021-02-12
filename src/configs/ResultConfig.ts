@@ -1,16 +1,5 @@
-import { QuizInterface } from "types/Types";
-import { dbService } from "components/firebaseConfig";
-
-export interface ResultProps {
-    quizzes: QuizInterface[] | null;
-    answers: boolean[];
-    isSubmit?: boolean;
-    currentUser?: firebase.default.User | null;
-}
-
-export interface ResultElementProps {
-    isCorrect: boolean;
-}
+import { ResultProps } from "types/Types";
+import { dbService } from "configs/firebaseConfig";
 
 export const saveCorrectUserEmail = async (
     currentUser: firebase.default.User | null | undefined
@@ -27,4 +16,14 @@ export const saveCorrectUserEmail = async (
             uid,
         });
     }
+};
+
+export const grading = ({ quizzes, answers, currentUser }: ResultProps) => {
+    for (let i = 0; i < answers.length; i++) {
+        if (quizzes?.[i].answer !== answers[i]) {
+            return false;
+        }
+    }
+    saveCorrectUserEmail(currentUser);
+    return true;
 };

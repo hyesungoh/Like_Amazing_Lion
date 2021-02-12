@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { ResultElementProps } from "components/Result/ResultConfig";
+import { ResultElementProps } from "types/Types";
 
 const ResultTitle = ({ isCorrect }: ResultElementProps) => {
     const [header, setHeader] = useState<string>("");
@@ -12,6 +12,7 @@ const ResultTitle = ({ isCorrect }: ResultElementProps) => {
     const WRONG_HEADER_MSG = "아쉽지만 틀렸습니다";
     const WRONG_INFO_MSG = "하단 버튼을 이용해 다시 도전 해보세요 !!";
 
+    // 정답, 오답을 구분하여 문자열을 state에 할당하여 보여주기 위함
     useEffect(() => {
         const tempHeader = isCorrect ? CORRECT_HEADER_MSG : WRONG_HEADER_MSG;
         setHeader(tempHeader);

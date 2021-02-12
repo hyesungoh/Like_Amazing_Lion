@@ -1,4 +1,3 @@
-
 export interface NavInterface {
     user: firebase.default.User | null;
 }
@@ -32,4 +31,15 @@ export interface QuizProgressProps {
     maxQuizNum: number;
     currentQuizNum: number;
     setCurrentQuizNum: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export interface ResultProps {
+    quizzes: QuizInterface[] | null;
+    answers: boolean[];
+    isSubmit?: boolean;
+    currentUser?: firebase.default.User | null;
+}
+
+export interface ResultElementProps {
+    isCorrect: boolean;
 }

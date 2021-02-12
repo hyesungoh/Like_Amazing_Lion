@@ -237,8 +237,6 @@ setTimeout(() => {
 
 -   Nav의 오른쪽 요소들을 NavElement component로 빼둠
 
--   Types 폴더에 NavInterface를 위치
-
 ```ts
 export interface NavInterface {
     user: firebase.default.User | null;
@@ -362,3 +360,7 @@ for (let i = 0; i <= maxQuizNum; i++) {
     }
 }
 ```
+
+-   components의 각 폴더에 있는 config 파일들을 configs 폴더에 위치
+
+-   각 파일들에 있었던 interface들을 types/Types.ts 파일에 위치

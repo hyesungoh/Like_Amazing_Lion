@@ -6,7 +6,7 @@ import { QuizInterface } from "types/Types";
 import QuizSelect from "components/Quiz/QuizSelect";
 import QuizSlider from "components/Quiz/QuizSlider";
 import QuizLastSlide from "components/Quiz/QuizLastSlide";
-import { getRandomQuiz } from "components/Quiz/Quizzes";
+import { getRandomQuiz } from "configs/QuizzeConfig";
 import QuizProgress from "components/Quiz/QuizProgress";
 import Result from "pages/Result/Result";
 

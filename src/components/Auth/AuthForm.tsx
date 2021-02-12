@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { Button, TextField } from "@material-ui/core";
 
-import { authService } from "components/firebaseConfig";
+import { authService } from "configs/firebaseConfig";
 import CustomAlert from "components/Auth/CustomAlert";
 
 const AuthForm = () => {

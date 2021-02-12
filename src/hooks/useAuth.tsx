@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { authService } from "components/firebaseConfig";
+import { authService } from "configs/firebaseConfig";
 
 const useAuth = () => {
     const [currentUser, setCurrenUser] = useState<firebase.default.User | null>(

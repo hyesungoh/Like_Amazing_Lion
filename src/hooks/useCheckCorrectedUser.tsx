@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { dbService } from "components/firebaseConfig";
-import { authService } from "components/firebaseConfig";
+import { dbService } from "configs/firebaseConfig";
+import { authService } from "configs/firebaseConfig";
 
 const useCheckCorrectedUser = (currentUser: firebase.default.User | null) => {
     const [isCorrectedUser, setIsCorrectedUser] = useState<boolean>(false);

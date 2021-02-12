@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { Link, useHistory } from "react-router-dom";
-import { authService } from "components/firebaseConfig";
+import { authService } from "configs/firebaseConfig";
 
 import { NavInterface } from "types/Types";
 

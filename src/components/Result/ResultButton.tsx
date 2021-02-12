@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "@material-ui/core";
-import { ResultElementProps } from "components/Result/ResultConfig";
+import { ResultElementProps } from "types/Types";
 
 const ResultButton = ({ isCorrect }: ResultElementProps) => {
-    useEffect(() => {}, []);
+    // 정답, 오답을 구분하여 Button 태그를 보여줌
     return (
         <div className="result__button">
             {isCorrect ? (
