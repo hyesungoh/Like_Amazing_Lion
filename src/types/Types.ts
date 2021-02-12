@@ -2,6 +2,11 @@ export interface NavInterface {
     user: firebase.default.User | null;
 }
 
+export interface CustomAlertProps {
+    msg: string;
+    setMsg: React.Dispatch<React.SetStateAction<string>>;
+}
+
 export interface QuizInterface {
     name: string;
     answer: boolean;
