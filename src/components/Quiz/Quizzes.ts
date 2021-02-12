@@ -1,7 +1,4 @@
-export interface QuizInterface {
-    name: string;
-    answer: boolean;
-}
+import { QuizInterface } from "types/Types";
 
 const quizs: QuizInterface[] = [
     { name: "멋쟁이 사자처럼 1기는 서울대학교에서만 진행했다 ?", answer: true },
