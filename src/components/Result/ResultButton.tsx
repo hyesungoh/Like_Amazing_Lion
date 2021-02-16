@@ -9,7 +9,7 @@ const ResultButton = ({ isCorrect }: ResultElementProps) => {
             {isCorrect ? (
                 <a href="">
                     <Button variant="contained" color="primary">
-                        만든 사람 보기
+                        메인으로 가기
                     </Button>
                 </a>
             ) : (

@@ -4,8 +4,8 @@ import "pages/Waiting/Waiting.scss";
 
 const Waiting = () => {
     // other content's url
-    const LIKELION_INFORMATION_URL: string = "";
-    const LIKELION_FOOD_URL: string = "";
+    const LIKELION_INFORMATION_URL: string = "https://skhu-likelion-9th.github.io/likeInformative_Lion/";
+    const LIKELION_FOOD_URL: string = "https://skhu-likelion-9th.github.io/LikeFoodLion/";
 
     return (
         <div className="waiting">
@@ -18,7 +18,7 @@ const Waiting = () => {
                         자동적으로 이벤트 응모가 완료된 것 입니다! 🎁
                     </p>
                     <p>
-                        당첨자 추첨은 <b>2월 99일</b>에 진행할 예정이며,
+                        당첨자 추첨은 <b>3월 2일</b>에 진행할 예정이며,
                         <br />
                         당첨자에게는 이메일로 연락드리겠습니다. 😁
                     </p>
