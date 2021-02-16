@@ -6,9 +6,8 @@ const quizs: QuizInterface[] = [
     { name: "멋쟁이 사자처럼은 IT 전공자만 신청 가능하다 ?", answer: false },
     { name: "멋쟁이 사자처럼은 매년 해커톤을 진행한다 ?", answer: true },
     { name: "멋쟁이 사자처럼 활동 시기는 3월부터 12월이다 ?", answer: true },
-    { name: "정답은 X 입니다.5", answer: false },
-    { name: "정답은 X 입니다.6", answer: false },
-    { name: "정답은 X 입니다.7", answer: false },
+    { name: "멋쟁이 사자처럼은 '이두희'씨가 만들지 않았다 ?", answer: false },
+    { name: "코로나, 마스크 알리미는 멋쟁이 사자차럼 출신이다 ?", answer: true },
 ];
 
 const QUIZ_MAX: number = quizs.length;
