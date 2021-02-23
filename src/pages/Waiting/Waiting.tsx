@@ -4,8 +4,11 @@ import "pages/Waiting/Waiting.scss";
 
 const Waiting = () => {
     // other content's url
-    const LIKELION_INFORMATION_URL: string = "https://skhu-likelion-9th.github.io/likeInformative_Lion/";
-    const LIKELION_FOOD_URL: string = "https://skhu-likelion-9th.github.io/LikeFoodLion/";
+    const LIKELION_INFORMATION_URL: string =
+        "https://skhu-likelion-9th.github.io/likeInformative_Lion/";
+    const LIKELION_FOOD_URL: string =
+        "https://skhu-likelion-9th.github.io/LikeFoodLion/";
+    const LIKELION_APPLY_URL: string = "https://apply.likelion.org/";
 
     return (
         <div className="waiting">
@@ -24,6 +27,15 @@ const Waiting = () => {
                     </p>
                 </div>
                 <div className="content__other">
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href={LIKELION_APPLY_URL}
+                    >
+                        <Button color="primary">
+                            멋쟁이사자차럼 9기 지원하기
+                        </Button>
+                    </a>
                     <a
                         target="_blank"
                         rel="noreferrer"
